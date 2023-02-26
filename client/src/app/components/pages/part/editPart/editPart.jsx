@@ -131,7 +131,7 @@ const EditPart = () => {
                                 />
                                 <SelectField
                                     label="Выберите категории"
-                                    name="categories"
+                                    name="category"
                                     defaultValue={data.category}
                                     value={data.category}
                                     options={categoriesList}
