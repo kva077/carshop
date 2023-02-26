@@ -22,7 +22,7 @@ const AddPart = () => {
         description: "",
         image: "",
         price: "",
-        stock: true
+        stock: "true"
     });
     const categories = useSelector(getCategories());
     const categoriesList = categories.map((c) => ({
@@ -118,8 +118,8 @@ const AddPart = () => {
                         />
                         <RadioField
                             options={[
-                                { name: "В наличии", value: true },
-                                { name: "Под заказ", value: false }
+                                { name: "В наличии", value: "true" },
+                                { name: "Под заказ", value: "false" }
                             ]}
                             value={data.stock}
                             name="stock"
