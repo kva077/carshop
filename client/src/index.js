@@ -7,6 +7,7 @@ import { createStore } from "./app/store/createStore";
 import { Provider } from "react-redux";
 import { Router } from "react-router-dom";
 import history from "./app/utils/history";
+import ScrollToTop from "./app/components/common/scrollToTop";
 
 const store = createStore;
 
@@ -14,7 +15,9 @@ ReactDOM.render(
     <React.StrictMode>
         <Provider store={store()}>
             <Router history={history}>
-                <App />
+                <ScrollToTop>
+                    <App />
+                </ScrollToTop>
             </Router>
         </Provider>
     </React.StrictMode>,
