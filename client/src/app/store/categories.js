@@ -47,7 +47,6 @@ export const getCategories = () => (state) => state.categories.entities;
 export const getCategoriesLoadingStatus = () => (state) =>
     state.categories.isLoading;
 export const getCategoryById = (id) => (state) => {
-    console.log(id);
     if (state.categories.entities) {
         return state.categories.entities.find((c) => c._id === id);
     }

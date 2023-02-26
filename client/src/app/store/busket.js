@@ -57,4 +57,8 @@ export const {
     busketCleaned
 } = actions;
 
+export const getBusketCount = (state) => {
+    return state;
+};
+
 export default busketReducer;

@@ -15,8 +15,8 @@ import showPrice from "../utils/showPrice";
 const Busket = () => {
     const dispatch = useDispatch();
     const { items, totalPrice } = useSelector((state) => state.busket);
-    const totalCount = items.reduce((sum, item) => sum + item.count, 0);
     const [searchedValue, setSearchedValue] = useState("");
+    const totalCount = items.reduce((sum, item) => sum + item.count, 0);
 
     const handleSearchedValue = ({ target }) => {
         setSearchedValue(target.value);

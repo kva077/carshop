@@ -47,7 +47,6 @@ const partsSlice = createSlice({
             state.entities = state.entities.sort((a, b) => b.price - a.price);
         },
         partsSortedByCat: (state, action) => {
-            console.log(action.payload);
             state.entities = state.entities.filter(
                 (p) => p.categories === action.payload
             );
