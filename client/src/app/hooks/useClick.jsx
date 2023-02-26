@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from "react";
 
 /**
+ * НЕ ИСПОЛЬЗОВАЛСЯ (pop-menu сортировки)
  * Хук, который предупреждает о клике outside of the passed ref
  */
 function useClickOutside(ref) {

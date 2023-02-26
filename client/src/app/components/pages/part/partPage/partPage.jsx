@@ -67,13 +67,19 @@ const PartPage = ({ partId }) => {
                                     />
                                 ) : (
                                     <div className="parts-grid__body-button">
-                                        <button
-                                            className="blue-button"
-                                            id={partId}
-                                            onClick={handleAddProductToCart}
-                                        >
-                                            В корзину
-                                        </button>
+                                        {part.stock === "true" ? (
+                                            <button
+                                                className="blue-button"
+                                                id={partId}
+                                                onClick={handleAddProductToCart}
+                                            >
+                                                В корзину
+                                            </button>
+                                        ) : (
+                                            <span>
+                                                Товара сейчас нет в наличии
+                                            </span>
+                                        )}
                                     </div>
                                 )}
                             </div>

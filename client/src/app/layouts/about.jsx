@@ -1,9 +1,11 @@
 import React from "react";
+import Breadcrumbs from "../components/common/breadcrumbs";
 import Container from "../components/common/container";
 
 const About = () => {
     return (
         <section className="about">
+            <Breadcrumbs />
             <Container>
                 <h1 className="head-title">
                     Тюнинг ателье CARSHOP Performance

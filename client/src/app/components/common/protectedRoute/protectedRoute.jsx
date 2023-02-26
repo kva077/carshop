@@ -42,25 +42,3 @@ ProtectedRoute.propTypes = {
 };
 
 export default ProtectedRoute;
-
-/* <Route
-{...rest}
-render={(props) => {
-    if (!isLoggedIn) {
-        return (
-            <Redirect
-                to={{
-                    pathname: "/login",
-                    state: {
-                        from: props.location
-                    }
-                }}
-            />
-        );
-    } else if (currentUser) {
-        return <Redirect to={`/user/${currentUser._id}`} />;
-    } else {
-        return Component ? <Component {...props} /> : children;
-    }
-}}
-/> */

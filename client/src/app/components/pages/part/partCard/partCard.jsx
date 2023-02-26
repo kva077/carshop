@@ -9,13 +9,13 @@ import {
 import InputQuantity from "../../../common/inputQuantity";
 import showPrice from "../../../../utils/showPrice";
 
-const PartCard = ({ _id, image, name, manufacturer, price }) => {
+const PartCard = ({ _id, image, name, manufacturer, price, stock }) => {
     const dispatch = useDispatch();
     const busketItem = useSelector((state) =>
         state.busket.items.find((item) => item._id === _id)
     );
     const addedCount = busketItem ? busketItem.count : 0;
-    const item = { _id, image, name, manufacturer, price };
+    const item = { _id, image, name, manufacturer, price, stock };
     const handleAddProductToCart = () => {
         dispatch(busketAdded(item));
     };
@@ -38,9 +38,24 @@ const PartCard = ({ _id, image, name, manufacturer, price }) => {
                     />
                 </div>
                 <div className="parts-grid__body">
-                    <div className="parts-grid__body-price">
-                        {showPrice(price)} ₽
+                    <div className="parts-grid__body-top">
+                        <div className="parts-grid__body-price">
+                            {showPrice(price)} ₽
+                        </div>
+                        {
+                            <div
+                                className={
+                                    "parts-grid__body-" +
+                                    (stock === "true" ? "stock" : "notstock")
+                                }
+                            >
+                                {stock === "true"
+                                    ? "В наличии"
+                                    : "Нет в наличии"}
+                            </div>
+                        }
                     </div>
+
                     <div className="parts-grid__body-title">
                         {manufacturer} {name}
                     </div>
@@ -53,7 +68,7 @@ const PartCard = ({ _id, image, name, manufacturer, price }) => {
                         handleAdd={handleAddProductToCart}
                         handleRemove={handleRemoveProductFromCart}
                     />
-                ) : (
+                ) : stock === "true" ? (
                     <button
                         className="blue-button"
                         id={_id}
@@ -61,8 +76,11 @@ const PartCard = ({ _id, image, name, manufacturer, price }) => {
                     >
                         В корзину
                     </button>
+                ) : (
+                    <button className="disabled-button" id={_id}>
+                        В корзину
+                    </button>
                 )}
-                {/* <BusketButton partId={_id} /> */}
             </div>
         </div>
     );

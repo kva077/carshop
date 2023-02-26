@@ -16,7 +16,6 @@ import Loader from "../../../common/loader";
 import { partValidatorConfig } from "../../../../utils/validatorConfig";
 import { validator } from "../../../../utils/validator";
 import PartsLoader from "../../../ui/hoc/partsLoader";
-import { busketRemoved } from "../../../../store/busket";
 
 const EditPart = () => {
     const dispatch = useDispatch();
