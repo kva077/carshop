@@ -1,11 +1,11 @@
 import React from "react";
-import TextField from "../common/form/textField";
-import CheckBoxField from "../common/form/checkBoxField";
+import TextField from "../../common/form/textField";
+import CheckBoxField from "../../common/form/checkBoxField";
 import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { getAuthErrors, login } from "../../store/users";
-import useForm from "../../hooks/useForm";
-import { loginValidatorConfig } from "../../utils/validatorConfig";
+import { getAuthErrors, login } from "../../../store/users";
+import useForm from "../../../hooks/useForm";
+import { loginValidatorConfig } from "../../../utils/validatorConfig";
 
 const initialState = {
     email: "",

@@ -1,15 +1,60 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Container from "../../common/container";
 
 const Footer = () => {
     return (
-        <footer className="footer">
-            <Container>
-                <div className="footer__inner">
-                    <Link to="/">Политика конфиденциальности</Link>
+        <footer>
+            <div className="footer">
+                <div className="logo row">
+                    <div className="footer-header">
+                        <h3>Carshop Performance</h3>
+                    </div>
+                    <div className="logo-des"></div>
                 </div>
-            </Container>
+                <div className="office row">
+                    <div className="footer-header">
+                        <h3>Связаться с нами</h3>
+                    </div>
+                    <div className="office-des">
+                        <Link to="/">devbykva@gmail.com</Link>
+
+                        <p className="num">+7 (929) 001-21-21</p>
+                    </div>
+                </div>
+
+                <div className="link row">
+                    <div className="footer-header">
+                        <h3>Ссылки</h3>
+                    </div>
+                    <div className="link-des">
+                        <Link to="/" className="footer-links">
+                            Домой
+                        </Link>
+                        <Link to="/works" className="footer-links">
+                            Наши работы
+                        </Link>
+                        <Link to="/parts" className="footer-links">
+                            Магазин
+                        </Link>
+                        <Link to="/about" className="footer-links">
+                            О нас
+                        </Link>
+                        <Link to="/login" className="footer-links">
+                            Войти
+                        </Link>
+                    </div>
+                </div>
+
+                <div className="newsletter row">
+                    <div className="footer-header">
+                        <h3>Социальные сети</h3>
+                    </div>
+                </div>
+            </div>
+            <div className="copyright">
+                <hr />
+                <p>© Copyright 2023 Vladislav Kolesnikov.</p>
+            </div>
         </footer>
     );
 };
@@ -106,4 +151,4 @@ export default Footer;
                     <p className="mt-8 text-base leading-6 text-center text-gray-400">
                         © 2023 Carshop Performance, Inc. All rights reserved.
                     </p>
-                </div>*/
+                </div> */

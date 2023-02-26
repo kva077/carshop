@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from "react";
-import { validator } from "../../utils/validator";
-import TextField from "../common/form/textField";
-import RadioField from "../common/form/radioField";
-import CheckBoxField from "../common/form/checkBoxField";
+import React from "react";
+import TextField from "../../common/form/textField";
+import RadioField from "../../common/form/radioField";
+import CheckBoxField from "../../common/form/checkBoxField";
 import { useDispatch } from "react-redux";
-import { signUp } from "../../store/users";
-import useForm from "../../hooks/useForm";
-import { registerValidatorConfig } from "../../utils/validatorConfig";
+import { signUp } from "../../../store/users";
+import useForm from "../../../hooks/useForm";
+import { registerValidatorConfig } from "../../../utils/validatorConfig";
+import { Link } from "react-router-dom";
 
 const RegisterForm = () => {
     const initialState = {
@@ -82,7 +82,7 @@ const RegisterForm = () => {
                 name="licence"
                 error={errors.licence}
             >
-                Подтвердить <a>лицензионное соглашение</a>
+                Подтвердить <Link to="/">лицензионное соглашение</Link>
             </CheckBoxField>
             <button className="control" type="submit" disabled={!isValid}>
                 Зарегистрироваться

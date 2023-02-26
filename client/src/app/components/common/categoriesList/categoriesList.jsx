@@ -5,35 +5,43 @@ const CategoriesList = ({
     items,
     valueProperty,
     contentProperty,
-    onItemSelect
+    onItemSelect,
+    selectedCategory
 }) => {
-    return (
-        <div>
-            <h3>Категории:</h3>
-            <ul className="parts__categories">
-                {items.map((item) => (
+    if (items) {
+        return (
+            <div>
+                <h3>Категории:</h3>
+                <ul className="parts__categories">
+                    {items.map((item) => (
+                        <li
+                            key={item[valueProperty]}
+                            className={
+                                "parts__categories-names" +
+                                (selectedCategory === item[valueProperty]
+                                    ? "--active"
+                                    : "")
+                            }
+                            onClick={() => onItemSelect(item)}
+                            role="button"
+                        >
+                            {item[contentProperty]}
+                        </li>
+                    ))}
                     <li
-                        key={item[valueProperty]}
-                        className="parts__categories-names"
-                        //     "list-group-item" +
-                        //     (item === selectedItem ? " active" : "")
-                        // }
-                        onClick={() => onItemSelect(item)}
+                        className={
+                            "parts__categories-names" +
+                            (!selectedCategory ? "--active" : "")
+                        }
+                        onClick={() => onItemSelect("")}
                         role="button"
                     >
-                        {item[contentProperty]}
+                        Очистить
                     </li>
-                ))}
-                <li
-                    className="parts__categories-disabled"
-                    onClick={() => onItemSelect("")}
-                    role="button"
-                >
-                    Очистить
-                </li>
-            </ul>
-        </div>
-    );
+                </ul>
+            </div>
+        );
+    }
 };
 CategoriesList.defaultProps = {
     valueProperty: "_id",

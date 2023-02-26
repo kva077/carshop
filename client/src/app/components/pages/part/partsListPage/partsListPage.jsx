@@ -74,7 +74,6 @@ const PartsListPage = () => {
     const sortByDec = () => {
         dispatch(partsSortedByDec());
     };
-
     return (
         <section className="parts">
             <Breadcrumbs />
@@ -96,6 +95,7 @@ const PartsListPage = () => {
                     <CategoriesList
                         items={categories}
                         onItemSelect={handleCategorySelect}
+                        selectedCategory={selectedCategory}
                     />
                 </div>
                 <div className="parts-grid">
