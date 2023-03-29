@@ -1,15 +1,26 @@
 import React from "react";
-import Breadcrumbs from "../components/common/breadcrumbs/breadcrumbs";
-import Container from "../components/common/container";
+import { useParams } from "react-router-dom";
+import EditWork from "../components/pages/work/editWork";
+import WorkPage from "../components/pages/work/workPage";
+import WorksListPage from "../components/pages/work/worksListPage";
+
 
 const Works = () => {
+    const params = useParams();
+    const { workId, edit } = params;
+
     return (
-        <section className="works">
-            <Breadcrumbs />
-            <Container>
-                <h1 className="head-title">Наши работы</h1>
-            </Container>
-        </section>
+        <>
+            {workId ? (
+                edit ? (
+                    <EditWork />
+                ) : (
+                    <WorkPage workId={workId} />
+                )
+                    ) : (
+                <WorksListPage />
+            )}
+        </>
     );
 };
 

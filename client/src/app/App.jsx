@@ -42,7 +42,7 @@ const App = () => {
                         <Route path="/busket" component={Busket} />
                         <ProtectedRoute path="/add" component={AddPart} />
                         <Route path="/about" component={About} />
-                        <Route path="/works" component={Works} />
+                        <ProtectedRoute path="/works/:workId?/:edit?" component={Works} />
                         <Route path="/" exact component={Main} />
                         <Redirect to="/" />
                     </Switch>

@@ -34,11 +34,13 @@ const busketSlice = createSlice({
             if (findItem && findItem.count > 1) {
                 findItem.count--;
             }
+            state.totalPrice = calcTotalPrice(state.items);
         },
         busketRemoved: (state, action) => {
             state.items = state.items.filter(
                 (item) => item._id !== action.payload
             );
+            state.totalPrice = calcTotalPrice(state.items);
         },
         busketCleaned: (state, action) => {
             state.items = [];
