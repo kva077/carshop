@@ -81,7 +81,7 @@ const Main = () => {
                             <p>
                                 В ближайшее время наш менеджер свяжется с вами
                             </p>
-                            <button type="submit">ОТПРАВИТЬ</button>
+                            <button>ОТПРАВИТЬ</button>
                         </form>
                         <div className="contacts__img"></div>
                     </div>

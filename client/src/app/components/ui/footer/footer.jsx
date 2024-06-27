@@ -5,20 +5,16 @@ const Footer = () => {
     return (
         <footer>
             <div className="footer">
-                <div className="logo row">
-                    <div className="footer-header">
-                        <h3>Carshop Performance</h3>
-                    </div>
-                    <div className="logo-des"></div>
-                </div>
                 <div className="office row">
                     <div className="footer-header">
                         <h3>Связаться с нами</h3>
                     </div>
                     <div className="office-des">
-                        <Link to="/">devbykva@gmail.com</Link>
-
-                        <p className="num">+7 (929) 001-21-21</p>
+                        <p className="num">
+                            devbykva@gmail.com
+                            <br />
+                            +7 (929) 001-21-21
+                        </p>
                     </div>
                 </div>
 
@@ -44,16 +40,10 @@ const Footer = () => {
                         </Link>
                     </div>
                 </div>
-
-                <div className="newsletter row">
-                    <div className="footer-header">
-                        <h3>Социальные сети</h3>
-                    </div>
-                </div>
             </div>
             <div className="copyright">
                 <hr />
-                <p>© Copyright 2023 Vladislav Kolesnikov.</p>
+                <p>© 2024 | Все права защищены | Carshop Perfomance</p>
             </div>
         </footer>
     );
